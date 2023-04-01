@@ -1,13 +1,345 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-color: red;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
 }
+
+.couch-king-title{
+  font-family: 'Delicious Handrawn', cursive;
+  font-size: 45px;
+  margin: .5rem;
+}
+
+.navbar-links ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li{
+  list-style: none;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.navbar-links li a{
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li:hover{
+  background-color: gray;
+}
+
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  margin-top: 20px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px){
+  .toggle-button{
+    display: flex;
+  }
+
+  .navbar-links{
+    display: none;
+    width: 100%;
+  }
+
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li{
+    text-align: center;
+  }
+
+  .navbar-links li a{
+    padding: .5rem 1rem;
+  }
+
+  .navbar-links.active{
+    display: flex;
+  }
+
+  .navbar.active{
+    display: none;
+  }
+}
+
+.home{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+.couch-pic{
+  width: 100%;
+  height: 900px;
+}
+
+.about-us{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-animation{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 700px;
+  animation: slideInImgs 1s ease-in;
+}
+
+.caption-animation{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 700px;
+  animation: slideInCaptions 1s ease-in;
+}
+
+@keyframes slideInCaptions {
+  from{
+    transform: translateX(300px);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInImgs {
+  from{
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-us-title{
+  font-weight: bold;
+  font-size: 50px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.couch-king-bolded{
+  color: red;
+}
+
+.about-us-subtitle{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+
+.about-us-desc{
+  width: 1000px;
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+}
+
+.about-us-imgs, .img-captions{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 700px;
+}
+
+img{
+  width: 100px;
+}
+
+.img-captions{
+  font-family: 'Prompt', sans-serif;
+  font-weight: bold;
+}
+
+.memberships-section{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+}
+
+.memberships-section h2{
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  font-size: 50px;
+}
+
+.basic h3, .plus h3, .pro h3{
+  display: block;
+  margin-top: 0;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
+  border-width: thin;
+}
+
+.basic, .plus, .pro{
+  width: 500px;
+  background-color: white;
+  color: black;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 5px grey;
+  
+}
+
+.pro{
+  margin-right: 40px;
+}
+
+.plus{
+}
+
+.basic{
+  margin-left: 40px;
+}
+
+.animateBasic{
+  animation: slideInBasic 1s ease-in;
+}
+
+.animatePlus{
+  animation: slideInPlus 1s ease-in;
+}
+
+.animatePro{
+  animation: slideInPro 1s ease-in;
+}
+
+@keyframes slideInBasic{
+  from{
+    transform: translate(-300px, 300px);
+    opacity: 0;
+  }
+
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInPlus{
+  from{
+    transform: translateY(300px);
+  }
+
+  to{
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInPro{
+  from{
+    transform: translate(300px, 300px);
+  }
+
+  to{
+    transform: translate(0, 0);
+  }
+}
+
+.basic h3{
+  background-color: yellow;
+  color: grey;
+}
+
+.plus h3{
+  background-color: orange;
+  color: rgb(26, 24, 24);
+}
+
+.pro h3{
+  background-color: red;
+  color: black;
+  font-weight: bold;
+}
+
+.membership-plans{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.basic-pricing, .plus-pricing, .pro-pricing{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-style: dashed;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-width: thin;
+}
+
+.basic-price, .plus-price, .pro-price{
+  font-size: 30px;
+}
+
+.basic-features, .plus-features, .pro-features{
+  line-height: 200%;
+  font-size: 15px;
+}
+
+.basic-pricing{
+  padding-bottom: 30px;
+}
+
